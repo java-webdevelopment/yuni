@@ -18,7 +18,7 @@ public class BankApplication {
 		System.out.println("Enter Pw: ");
 		Scanner sc1 = new Scanner(System.in);
 		new_pw1 = sc1.nextLine();
-		}while (b.checkIdentification(new_id1, new_pw1));
+		}while (!b.checkIdentification(new_id1, new_pw1));
 
 		System.out.println("Your Id is BA0001 \n----------------");
 		System.out.println("A. Check Balance");// 어떤 메뉴들을 선택할 수 있는지 표시함
@@ -27,7 +27,9 @@ public class BankApplication {
 		System.out.println("D. Transfer");
 		System.out.println("E. Previous transaction");
 		System.out.println("F. Exit");
-		System.out.print("------------------\nSelect an option: ");
+		
+		
+		while(true) {System.out.print("------------------\nSelect an option: ");
 		String menu = scan.next().toLowerCase();
 		switch (menu.charAt(0)) {
 		case 'a':
@@ -61,6 +63,7 @@ public class BankApplication {
 		default:
 			System.out.println("you had wrong choice! Enter again please");
 		}
+	}
 	}
 
 }
