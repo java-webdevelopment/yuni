@@ -27,6 +27,17 @@ public class BankDTO {
 		io[count++] = message;
 		System.out.println(message);
 	}
+	
+	public void showMenu() {
+		
+		System.out.println("A. Check Balance");// 어떤 메뉴들을 선택할 수 있는지 표시함
+		System.out.println("B. Deposit");
+		System.out.println("C. Withdraw");
+		System.out.println("D. Show Menu");
+		System.out.println("E. Previous transaction");
+		System.out.println("F. Exit");
+		
+	}
 
 	public void withdraw() {
 		String message1 = "\n\n------------------------\n" + "Enter an amount to withdraw"
