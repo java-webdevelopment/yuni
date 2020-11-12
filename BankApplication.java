@@ -10,26 +10,33 @@ public class BankApplication {
 		BankDTO b = new BankDTO();
 		String new_id1;
 		String new_pw1;
-		do{ 			
+		String[] arr = new String[180];
+		int count=0;
+		do{ 	
+			if(arr[count]=="Enter Pw: ") {
+				System.out.println("you entered wrong id & pw!");
+			}
 		System.out.println("Welcome XYZ");
 		System.out.println("Enter Id: ");
 		Scanner sc = new Scanner(System.in);
 		new_id1 = sc.nextLine();
-		System.out.println("Enter Pw: ");
+		String message="Enter Pw: ";
+		System.out.println(message);
+		arr[count]=message;
 		Scanner sc1 = new Scanner(System.in);
 		new_pw1 = sc1.nextLine();
-		}while (!b.checkIdentification(new_id1, new_pw1));
+		}while (!b.checkIdentification(new_id1, new_pw1)) ;
 
-		System.out.println("Your Id is BA0001 \n----------------");
+		System.out.println("Your Id is BA0001 \n-----------------------------");
 		System.out.println("A. Check Balance");// 어떤 메뉴들을 선택할 수 있는지 표시함
 		System.out.println("B. Deposit");
 		System.out.println("C. Withdraw");
-		System.out.println("D. Transfer");
+		System.out.println("D. Show Menu");
 		System.out.println("E. Previous transaction");
 		System.out.println("F. Exit");
 		
 		
-		while(true) {System.out.print("------------------\nSelect an option: ");
+		while(true) {System.out.print("\nSelect an option ----> ");
 		String menu = scan.next().toLowerCase();
 		switch (menu.charAt(0)) {
 		case 'a':
@@ -47,7 +54,7 @@ public class BankApplication {
 
 		case 'd':
 		case 'ㅇ':
-			b.transfer();
+			b.showMenu();
 			break;
 
 		case 'e':
